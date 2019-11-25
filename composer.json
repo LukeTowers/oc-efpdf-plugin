@@ -1,0 +1,18 @@
+{
+    "name": "luketowers/oc-efpdf-plugin",
+    "type": "october-plugin",
+    "description": "Easy Forms add-on to automatically generate PDFs from submitted forms",
+    "homepage": "https://github.com/LukeTowers/oc-easyfacebookfeed-plugin",
+    "keywords": ["october", "octobercms", "laravel", "form builder", "forms", "form", "easy", "php", "pdf", "generator"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Towers",
+            "email": "octobercms@luketowers.ca"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "luketowers/oc-snappypdf-plugin": "dev-master"
+    }
+}

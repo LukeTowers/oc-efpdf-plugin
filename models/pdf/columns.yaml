@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: luketowers.easyforms::lang.models.general.name
+    template:
+        label: luketowers.efpdf::lang.models.pdf.template
+    data[filename]:
+        label: luketowers.efpdf::lang.models.pdf.filename
+        searchable: false
+        sortable: false
+    notifications:
+        label: luketowers.easyforms::lang.models.notification.label_plural
+        relation: notifications
+        select: name

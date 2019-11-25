@@ -1,0 +1,7 @@
+pdfs:
+    label: 'luketowers.efpdf::lang.models.pdf.label'
+    list: $/luketowers/efpdf/models/pdf/columns.yaml
+    form: $/luketowers/efpdf/models/pdf/fields.yaml
+    view:
+        showCheckboxes: false
+        toolbarButtons: create

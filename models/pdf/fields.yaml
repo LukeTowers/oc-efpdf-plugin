@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: luketowers.easyforms::lang.models.general.name
+        span: left
+    data[filename]:
+        label: luketowers.efpdf::lang.models.pdf.filename
+        span: right
+    template:
+        label: luketowers.efpdf::lang.models.pdf.template
+        span: left
+        type: dropdown
+    notifications@create:
+        label: luketowers.easyforms::lang.models.notification.label_plural
+        type: text
+        placeholder: Create the PDF before attaching it to any notifications
+        span: right
+        disabled: true
+    notifications@update:
+        label: luketowers.easyforms::lang.models.notification.label_plural
+        type: taglist
+        mode: array
+        customTags: false
+        useKey: true
+        options: getNotificationsOptions
+        span: right
+        comment: luketowers.efpdf::lang.models.pdf.notifications_comment
+    custom_template:
+        label: luketowers.efpdf::lang.models.pdf.custom_template
+        span: full
+        type: codeeditor
+        language: twig
+        size: huge
+        trigger:
+            action: show
+            field: template
+            condition: value[custom]
