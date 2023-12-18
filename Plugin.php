@@ -65,7 +65,12 @@ class Plugin extends PluginBase
         });
 
         Forms::extend(function ($controller) {
-            $controller->relationConfig = $controller->mergeConfig($controller->relationConfig, '$/luketowers/efpdf/yaml/controller.form.relationconfig.yaml');
+            $relationConfig = $controller->mergeConfig($controller->relationConfig ?: 'config_relation.yaml', '$/luketowers/efpdf/yaml/controller.form.relationconfig.yaml');
+            if ($controller->propertyExists('relationConfig')) {
+                $controller->relationConfig = $relationConfig;
+            } else {
+                $controller->addDynamicProperty('relationConfig', $relationConfig);
+            }
         });
 
         Forms::extendFormFields(function ($form, $model, $context) {
@@ -73,7 +78,7 @@ class Plugin extends PluginBase
                 return;
             }
 
-            $form->addTabFields([
+            $form->addSecondaryTabFields([
                 'pdfs' => [
                     'type' => 'partial',
                     'path' => '$/luketowers/efpdf/partials/field.pdfs.htm',
